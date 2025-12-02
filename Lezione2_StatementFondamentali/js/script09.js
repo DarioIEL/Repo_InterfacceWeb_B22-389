@@ -16,21 +16,34 @@
 
 //Prova a fare la stessa cosa con un While
 
-let numeriestratti = [];
-let estrazioniEseguite = 0;
+// let numeriestratti = [];
+// let estrazioniEseguite = 0;
 
-while(numeriestratti.length < 50){
-    let numeroEstratto = Math.ceil(Math.random() * 90);
-    if(numeriestratti.indexOf(numeroEstratto) == -1){
-        numeriestratti.push(numeroEstratto)
-    }
-    estrazioniEseguite++;
-}
+// while(numeriestratti.length < 50){
+//     let numeroEstratto = Math.ceil(Math.random() * 90);
+//     if(numeriestratti.indexOf(numeroEstratto) == -1){
+//         numeriestratti.push(numeroEstratto)
+//     }
+//     estrazioniEseguite++;
+// }
 
-console.log(numeriestratti);
-console.log(estrazioniEseguite);
-
+// console.log(numeriestratti);
+// console.log(estrazioniEseguite);
 
 
 //Prova a fare lo stesso esercizio ma con solo il costrutto del for, in pratica non utilizzare il metodo indexOf()
+let numeriEstratti = [];
+
+for(let i = 0; i < 50; i++){
+    let numeroEstratto = Math.ceil(Math.random() * 90);
+    for(let j = 0; j < numeriEstratti.length; j++){
+        if(numeriEstratti[j] == numeroEstratto){
+            continue;
+        }
+    }
+    numeriEstratti.push(numeroEstratto);
+}
+
+console.log(numeriEstratti);
+
 

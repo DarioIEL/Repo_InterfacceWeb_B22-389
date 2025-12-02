@@ -91,3 +91,17 @@ for (let i = 0; i < nomi.length; i++) {
     }
     console.log(nomi[i]);
 }
+
+
+
+//FOREACH
+//Un esempio di funzione di callback sincrona è il foreach nel quale utilizzo anche una arrow function
+let listaColori = ["blu", "bianco", "verde", "rosa"];
+
+//sintassi del foreach
+// array.forEach(element => {
+// });
+
+listaColori.forEach(colore => {
+    console.log(colore);
+})
