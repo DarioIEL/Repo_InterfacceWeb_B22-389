@@ -1,0 +1,1 @@
+// Crea una classe "Azienda" avente nome e settore (metodi da creare: stampaListaDipendenti(), toString()). La classe azienda dovrà avere dei dipendenti, oggetti di tipo Dipendente (nome, cognome, matricola, stipendio, calcolStipendio(), toString())
