@@ -1,11 +1,13 @@
 //ATT: le classi definiscono i tipi complessi 
 
 class Biblioteca{
+    
     constructor(nome, indirizzo){
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.libri = [];
     }
+
 
     aggiungiLibro(libro){
         this.libri.push(libro);
