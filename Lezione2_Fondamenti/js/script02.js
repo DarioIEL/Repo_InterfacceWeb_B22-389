@@ -1,11 +1,11 @@
 let studenti = [
-  "Giacomo",
-  "Lamyaa",
-  "Andrea",
+  "Giacomo", //0
+  "Lamyaa", //1
+  "Andrea", //2
   "Mohammadhossein",
   "Barbara",
   "Federico",
-  "Fabio",
+  "Fabio", //studenti.length - 1
 ];
 
 let docenti = new Array(); //anche così posso definire un array
