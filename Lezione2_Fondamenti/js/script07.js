@@ -3,7 +3,8 @@
 let listaNum = [4,32,1,33,42,1,0,49,5,67,42];
 
 let numDaCercare = 42;
-let giri = 0
+let giri = 0;
+
 
 for(let i = 0; i < listaNum.length; i++){
     giri++;
