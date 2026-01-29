@@ -18,13 +18,16 @@ Es: fileEsercitazione.pdf 🡪 pdf oppure index.html 🡪 html
 lettere iniziali: Ja. Se la parola fornita comincia con Ja allora verrà semplicemente restituita senza aggiunta
 Es: Torino 🡪 JaTorino Javascript 🡪 Javascript
 
-### Esercizio 7 – Scrivere un programma per trovare il valor più vicino a 100 tra una coppia di numeri forniti, se
+### Esercizio 7 
+Scrivere un programma per trovare il valor più vicino a 100 tra una coppia di numeri forniti, se
 sono uguali ritorna un avviso
 
 
-### Esercizio 13 - Scrivi un programma che stampa tutti gli interi da 1 a 100. Per i multipli di 3 stampa “Ciao”, per i multipli di 5 stampa “Mondo”. Per i multipli sia di 3 , sia di 5 stamperà “Ciao, Mondo”
+### Esercizio 13 
+Scrivi un programma che stampa tutti gli interi da 1 a 100. Per i multipli di 3 stampa “Ciao”, per i multipli di 5 stampa “Mondo”. Per i multipli sia di 3 , sia di 5 stamperà “Ciao, Mondo”
 
-### Esercizio 14 – Scrivi un programma per trasformare un array di elementi (stringhe) in un’unica stringa, utilizza tutti i metodi che conosci
+### Esercizio 14 
+Scrivi un programma per trasformare un array di elementi (stringhe) in un’unica stringa, utilizza tutti i metodi che conosci
 
 ### Esercizio 15 – Scrivi un programma per pescare un elemento a caso in un array di numeri
 
