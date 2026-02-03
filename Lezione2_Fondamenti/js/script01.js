@@ -43,3 +43,12 @@ console.log(verificaCosa);
 
 //ATT: per quanto sia possibile fare degli array misti in JS non ha molto senso logico
 let mioArr = ["Ciao", 2, true, "Dario", 56.6];
+
+
+//OPERATORE SPREAD ...
+let colori = ["rosso", "giallo", "blu", "rosa", "verde"];
+let frutta = ["mela", "pera", "pesca"];
+
+let unicoArray = [...colori,...frutta];
+console.log(unicoArray);
+
