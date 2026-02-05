@@ -58,3 +58,6 @@ IL gioco dell'impiccato (7 tentativi per trovare la parola). Imposta un campo in
 
 /* -------------------------------- ### Es 14 ------------------------------- */
 // Scrivi un programma che controlla se un dato intero si trova tra 20 e 100 o tra 20 e 400
+
+/*--------------------------------- ### Es 15---------------------------------*/
+//OROLOGIO Digitale. Stampa nella pagina html un orologio digitale, deve essere visibile lo scorrere del tempo (sugg. utilizza i metodi setInterval)
