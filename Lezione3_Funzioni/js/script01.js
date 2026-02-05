@@ -9,7 +9,7 @@ function nomeFunzione(){
 nomeFunzione();
 
 //ATT: c'è una totale indipendenza tra la dichiarazione della funzione e il richiamo della stessa. Esiste però una buona norma: in alto dichiaro, in basso richiamo
-// saluta();
+saluta();
 function saluta(){
     console.log("Ciao Dario");
 }

@@ -69,6 +69,14 @@ console.log(nomeUser);
 
 console.log(costruisciNome("Laura", "Verdi"));
 
+function acquisisciNome(funzcostrNome){
+    let nome = funzcostrNome;
+    console.log(nome);
+}
+
+acquisisciNome(costruisciNome("Paolo", "Verdi"));
+
+
 //ARROW FUNCTIONS
 let somma = function(a,b){
     return a+b;
@@ -193,3 +201,15 @@ let studenteTrovato = nomiStud.find(function(stud){
 })
 console.log(studenteTrovato);
 
+//ESEMPIO di una funzione di callback anonima chiamata dallo HTML
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(){
+    console.log("Hai cliccato sul pulsante");    
+})
+
+btn.addEventListener("click", (evento)=>{
+    console.log("Questo è il click con la arrow");
+    console.log("L'evento è il seguente: ", evento);
+    console.log("il target è : ", evento.target);
+})
