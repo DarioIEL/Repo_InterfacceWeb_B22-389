@@ -44,7 +44,7 @@ IL gioco dell'impiccato (7 tentativi per trovare la parola). Imposta un campo in
 
 
 /* ----------------------------------- ES11 ---------------------------------- */
-// Scrivi una funzione calcolaAreaRettangolo(base, altezza) che restituisce l'area di un rettangolo o il perimetro in base al pulsante cliccato.
+// Scrivi una funzione calcolaAreaRettangolo(base, altezza) che restituisce l'area di un rettangolo o il perimetro in base al pulsante cliccato. Utilizzando la funzione calcolaArea crea una funzione calcolaVolume passando come parametri la profondità e la funzione calcolaArea
 
 
 /* -------------------------------- ### Es 12 ------------------------------- */
