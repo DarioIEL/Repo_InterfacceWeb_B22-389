@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Costruisci un programma per gestire una biblioteca. Bisogna inserire dei libri con i seguenti campi: Titolo, autore, anno, genere, isbn. 
+    All'apertura della pagina mostra tutti i libri a catalogo. Controlla l'inserimento dei campi (non possono essere vuoti). Controlla che non ci siano doppioni. Se inserisci un libro con lo stesso codice isbn riporta un errore  -->
+
+    <h1>Biblioteca</h1>
+
+    <p>Inserisci il libro da aggiungere alla collezione</p>
+
+    <form method="get" id="formLibri">
+
+        <input name="titolo" type="text" placeholder="titolo"><br>
+        <input name="autore" type="text" placeholder="autore"><br>
+        <input name="anno" type="number" placeholder="anno"><br>
+        <input name="isbn" type="text" placeholder="ISBN"><br>
+        <input name="genere" type="text" placeholder="genere"><br>
+
+        <button type="submit">Aggiungi</button>
+    </form>
+
+    <p id="feed" style="color: red;"></p>
+
+    <hr>
+
+    <div class="container" id="elencoLibri">
+        <!-- creare le card per ogni singolo libro -->
+    </div>
+
+
+
+<script src="./js/script05.js"></script>
+
+</body>
+</html>

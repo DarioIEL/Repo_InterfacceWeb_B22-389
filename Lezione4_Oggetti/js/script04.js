@@ -107,13 +107,15 @@ function aggiungiAuto(){
     console.log(parcoMacchine);
     
     //Questo metodo serve a non ricarica la pagina nel momento in cui viene inviato il form
-    event.preventDefault();
+   
     
     formAuto.reset();
 }
 
 formAuto.addEventListener("submit", function(event){
+
     aggiungiAuto();
+    event.preventDefault();
     stampaAuto(); //stampo tutte le auto ogni volta che ne aggiungo una
 });
 
