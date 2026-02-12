@@ -65,6 +65,8 @@ function formattaData(dateString){
 
 
 function ordinaTODO(){
+    //in questo caso con l'operatore ... faccio una copia di items lasciando intatto l'array items iniziale
+    
     return [...items].sort( (i,f) => new Date(i.data) - new Date(f.data) );
 }
 
