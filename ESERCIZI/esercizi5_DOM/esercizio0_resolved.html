@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio querySelector + Attributi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .prodotto {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .categoria-elettronica {
+            background-color: #e3f2fd;
+        }
+        .categoria-libri {
+            background-color: #fff3e0;
+        }
+        .prodotto.in-offerta {
+            border-color: #4caf50;
+            background-color: #e8f5e9;
+        }
+        .prodotto[data-disponibilita="esaurito"] {
+            opacity: 0.5;
+            position: relative;
+        }
+        .prodotto[data-disponibilita="esaurito"]::after {
+            content: "ESAURITO";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #1976d2;
+        }
+        .evidenziato {
+            background-color: yellow !important;
+            font-weight: bold;
+        }
+        .nascosto {
+            display: none;
+        }
+        .sconto {
+            background-color: #ff5722;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        #risultati {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            min-height: 50px;
+        }
+        img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titolo-principale" data-versione="1.0">Negozio Online</h1>
+    
+    <div id="pannello-controllo">
+        <h2>Pannello di Controllo - querySelector/All</h2>
+        <button onclick="esercizio1()">1. Cambia titolo</button>
+        <button onclick="esercizio2()">2. Evidenzia primo prodotto</button>
+        <button onclick="esercizio3()">3. Nascondi elettronica</button>
+        <button onclick="esercizio4()">4. Conta prodotti in offerta</button>
+        <button onclick="esercizio5()">5. Aggiungi IVA ai prezzi</button>
+        <button onclick="esercizio6()">6. Mostra solo libri</button>
+        
+        <h2>Pannello Attributi - get/setAttribute</h2>
+        <button onclick="esercizio7()">7. Leggi prezzo prodotto</button>
+        <button onclick="esercizio8()">8. Applica sconto 20%</button>
+        <button onclick="esercizio9()">9. Segna prodotti esauriti</button>
+        <button onclick="esercizio10()">10. Cambia immagini</button>
+        <button onclick="esercizio11()">11. Mostra prodotti cari</button>
+        <button onclick="esercizio12()">12. Aggiungi link esterni</button>
+        
+        <button onclick="esercizio13()" style="background-color: #9c27b0;">Reset</button>
+    </div>
+
+    <div id="risultati">
+        <strong>Risultati:</strong> <span id="output">Clicca un pulsante per vedere i risultati</span>
+    </div>
+
+    <div id="contenitore-prodotti">
+        <div class="prodotto categoria-elettronica" data-prezzo="299" data-disponibilita="disponibile" data-id="prod-001">
+            <img src="https://via.placeholder.com/100/4285F4/FFFFFF?text=Phone" alt="Smartphone">
+            <h3 class="nome-prodotto">Smartphone X</h3>
+            <p class="descrizione">Ultimo modello con fotocamera avanzata</p>
+            <span class="prezzo">€299</span>
+            <a href="#" class="link-dettagli">Dettagli</a>
+        </div>
+
+        <div class="prodotto categoria-elettronica in-offerta" data-prezzo="599" data-disponibilita="disponibile" data-id="prod-002">
+            <img src="https://via.placeholder.com/100/34A853/FFFFFF?text=Laptop" alt="Laptop">
+            <h3 class="nome-prodotto">Laptop Pro</h3>
+            <p class="descrizione">Perfetto per il lavoro e lo studio</p>
+            <span class="prezzo">€599</span>
+            <a href="#" class="link-dettagli">Dettagli</a>
+        </div>
+
+        <div class="prodotto categoria-libri" data-prezzo="15" data-disponibilita="disponibile" data-id="prod-003">
+            <img src="https://via.placeholder.com/100/FBBC04/FFFFFF?text=Book" alt="Libro">
+            <h3 class="nome-prodotto">JavaScript Avanzato</h3>
+            <p class="descrizione">Guida completa al linguaggio</p>
+            <span class="prezzo">€15</span>
+            <a href="#" class="link-dettagli">Dettagli</a>
+        </div>
+
+        <div class="prodotto categoria-libri in-offerta" data-prezzo="12" data-disponibilita="disponibile" data-id="prod-004">
+            <img src="https://via.placeholder.com/100/EA4335/FFFFFF?text=CSS" alt="Libro CSS">
+            <h3 class="nome-prodotto">HTML & CSS</h3>
+            <p class="descrizione">Manuale per principianti</p>
+            <span class="prezzo">€12</span>
+            <a href="#" class="link-dettagli">Dettagli</a>
+        </div>
+
+        <div class="prodotto categoria-elettronica" data-prezzo="89" data-disponibilita="disponibile" data-id="prod-005">
+            <img src="https://via.placeholder.com/100/9C27B0/FFFFFF?text=Audio" alt="Cuffie">
+            <h3 class="nome-prodotto">Cuffie Wireless</h3>
+            <p class="descrizione">Audio di alta qualità</p>
+            <span class="prezzo">€89</span>
+            <a href="#" class="link-dettagli">Dettagli</a>
+        </div>
+    </div>
+
+    <script>
+        function mostraRisultato(testo) {
+            document.getElementById('output').textContent = testo;
+        }
+
+        // ========== ESERCIZI querySelector/querySelectorAll ==========
+
+        // ESERCIZIO 1: Usa querySelector per selezionare l'elemento con id "titolo-principale"
+        // e cambia il suo testo in "Super Negozio Online"
+        function esercizio1() {
+            // SCRIVI IL TUO CODICE QUI
+            // document.querySelector("#titolo-principale").textContent = "Super Negozio Online" 
+            titoloH1 = document.querySelector("#titolo-principale");
+            titoloH1.textContent = "Super Negozio online"
+            
+            mostraRisultato("Titolo cambiato!");
+        }
+
+        // ESERCIZIO 2: Usa querySelector per selezionare il primo elemento con classe "prodotto"
+        // e aggiungi la classe "evidenziato"
+        function esercizio2() {
+            // SCRIVI IL TUO CODICE QUI
+            const primoProd = document.querySelector(".prodotto");
+            primoProd.classList.add("evidenziato");
+            
+            mostraRisultato("Primo prodotto evidenziato!");
+        }
+
+        // ESERCIZIO 3: Usa querySelectorAll per selezionare tutti i prodotti con classe "categoria-elettronica"
+        // e aggiungi la classe "nascosto" a ciascuno
+        function esercizio3() {
+            // SCRIVI IL TUO CODICE QUI
+            const prodsElettr = document.querySelectorAll(".categoria-elettronica");
+
+            prodsElettr.forEach(prod => {
+                prod.classList.add("nascosto")
+            })
+            
+            mostraRisultato("Prodotti elettronica nascosti!");
+        }
+
+        // ESERCIZIO 4: Usa querySelectorAll per contare quanti prodotti hanno la classe "in-offerta"
+        // e mostra il risultato usando mostraRisultato()
+        function esercizio4() {
+            // SCRIVI IL TUO CODICE QUI
+
+            const prodsOfferta = document.querySelectorAll(".in-offerta");
+            const numProdsOff = prodsOfferta.length;
+            mostraRisultato("Ci sono " + numProdsOff + " in offerta")
+
+            
+        }
+
+        // ESERCIZIO 5: Usa querySelectorAll per selezionare tutti gli elementi con classe "prezzo"
+        // e aggiungi " (IVA inclusa)" al testo di ciascuno
+        function esercizio5() {
+            // SCRIVI IL TUO CODICE QUI
+            const prodsPrezzi = document.querySelectorAll(".prezzo");
+
+            prodsPrezzi.forEach(prod => {
+                prod.textContent += " IVA inclusa";
+            }
+            )
+            
+            mostraRisultato("IVA aggiunta a tutti i prezzi!");
+        }
+
+        // ESERCIZIO 6: Usa querySelectorAll per nascondere tutti i prodotti che NON sono libri
+        // Suggerimento: usa il selettore .prodotto:not(.categoria-libri)
+        function esercizio6() {
+            // SCRIVI IL TUO CODICE QUI
+            const nonLibri = document.querySelectorAll(".prodotto:not(.categoria-libri)");
+
+            nonLibri.forEach(prod => {
+                prod.classList.add("nascosto")
+            })
+            
+            mostraRisultato("Mostrati solo i libri!");
+        }
+
+        // ========== ESERCIZI getAttribute/setAttribute ==========
+
+        // ESERCIZIO 7: Usa querySelector per selezionare il primo prodotto,
+        // poi usa getAttribute per leggere il suo attributo "data-prezzo"
+        // e mostra il risultato con mostraRisultato()
+        function esercizio7() {
+            // SCRIVI IL TUO CODICE QUI
+            const primoProd = document.querySelector(".prodotto");
+            const prezzo = primoProd.getAttribute("data-prezzo");
+            mostraRisultato(prezzo);
+        }
+
+        // ESERCIZIO 8: Usa querySelectorAll per selezionare tutti i prodotti in offerta,
+        // leggi il loro data-prezzo con getAttribute, calcola il 20% di sconto,
+        // e usa setAttribute per aggiornare data-prezzo con il nuovo valore
+        // Aggiorna anche il testo del prezzo visibile
+        function esercizio8() {
+            // SCRIVI IL TUO CODICE QUI
+            const prodsInOfferta = document.querySelectorAll(".in-offerta");
+
+            prodsInOfferta.forEach(prod => {
+                const prezzoIniziale = prod.getAttribute("data-prezzo");
+                const prezzoScontato = prezzoIniziale * 0.8;
+                prod.setAttribute("data-prezzo", prezzoScontato);
+                prod.querySelector(".prezzo").textContent = prezzoScontato + " €";
+            })
+            
+            mostraRisultato("Sconto del 20% applicato ai prodotti in offerta!");
+        }
+
+        // ESERCIZIO 9: Usa querySelectorAll per selezionare i prodotti elettronica,
+        // e usa setAttribute per cambiare il loro data-disponibilita in "esaurito"
+        function esercizio9() {
+            // SCRIVI IL TUO CODICE QUI
+            document.querySelectorAll(".categoria-elettronica").forEach(prod => {
+                prod.setAttribute("data-disponibilita", "esaurito")
+            })
+            
+            mostraRisultato("Prodotti elettronica segnati come esauriti!");
+        }
+
+        // ESERCIZIO 10: Usa querySelectorAll per selezionare tutte le immagini,
+        // e usa setAttribute per cambiare l'attributo "alt" di ciascuna in "Prodotto in vendita"
+        function esercizio10() {
+            // SCRIVI IL TUO CODICE QUI
+            
+            mostraRisultato("Attributi alt delle immagini modificati!");
+        }
+
+        // ESERCIZIO 11: Usa querySelectorAll per selezionare tutti i prodotti,
+        // usa getAttribute per leggere data-prezzo,
+        // e mostra solo i prodotti con prezzo > 50 (nascondi gli altri)
+        function esercizio11() {
+            // SCRIVI IL TUO CODICE QUI
+            const prods = document.querySelectorAll(".prodotto");
+            prods.forEach(prod => {
+                let prezzo = prod.getAttribute("data-prezzo");
+                if(prezzo > 50){
+                    prod.classList.remove("nascosto");
+                }else{
+                    prod.classList.add("nascosto");
+                }
+            })
+            
+            mostraRisultato("Mostrati solo prodotti con prezzo > €50!");
+        }
+
+        // ESERCIZIO 12: Usa querySelectorAll per selezionare tutti i link con classe "link-dettagli",
+        // e usa setAttribute per cambiare l'href in "https://example.com/prodotto-" + l'id del prodotto padre
+        // Suggerimento: usa element.closest('.prodotto') per trovare il prodotto padre
+        function esercizio12() {
+            // SCRIVI IL TUO CODICE QUI
+            
+            mostraRisultato("Link aggiornati con URL esterni!");
+        }
+
+        // ESERCIZIO 13: Ricarica la pagina per resettare tutto
+        function esercizio13() {
+            location.reload();
+        }
+
+        // ========== ESERCIZI BONUS ==========
+        // 1. Seleziona solo i prodotti in offerta della categoria libri
+        // 2. Trova il prodotto più costoso usando getAttribute su data-prezzo
+        // 3. Crea una funzione che cambia il data-id di tutti i prodotti in modo sequenziale
+        // 4. Usa getAttribute per leggere data-versione dal titolo e incrementala di 0.1
+    </script>
+</body>
+</html>
