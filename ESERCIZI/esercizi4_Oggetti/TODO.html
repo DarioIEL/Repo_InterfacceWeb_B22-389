@@ -14,7 +14,15 @@
      PLUS: ogni singola cosa da fare va stampata con accanto un pulsante per eliminare  [X] (non sviluppare ancora la funzione, se vuoi)
      PLUS2: organizza gli eventi in ordine di tempo -->
 
-     <input type="date" >
+     <form id="formTodo">
+        <input type="text" name="cosaItem" placeholder="Cosa devi fare?"> 
+        <input type="date" name="dataItem">
+        <button type="submit">ADD</button>
+     </form>
+
+     <div>
+        <ul id="elListaItems"></ul>
+     </div>
 
      <script src="./js/scriptTodo.js"></script>
 </body>
