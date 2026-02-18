@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul id="listaEsempio">
+
+    </ul>
+    
+
+    <script>
+        let listaEsempio = document.querySelector("#listaEsempio");
+
+        function creaLI() {
+            let li = document.createElement("li");
+            li.textContent = "Prova Eliminazione";
+            // <li> Prova Eliminazione </li>
+
+            let button = document.createElement("button");
+            button.textContent = "Elimina";
+            button.addEventListener("click", function(){
+                //do al pulsante la funzionalità per l'eliminazione del singolo li
+                listaEsempio.removeChild(li);
+            })
+            //<button> Elimina </button>
+
+            li.appendChild(button);
+            //<li> Prova Eliminazione <button> Elimina </button>
+
+            return li;
+        }
+
+        let nuovoLi = creaLI();
+        listaEsempio.appendChild(nuovoLi);
+
+
+    </script>
+</body>
+</html>
