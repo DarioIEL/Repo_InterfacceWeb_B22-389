@@ -43,7 +43,6 @@ function recuperaMsgs(){
     }
 }
 
-
 function stampaMessaggi(){
     feed.innerHTML = "";
     messaggi.forEach(msg => {
