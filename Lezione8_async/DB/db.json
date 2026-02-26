@@ -1,0 +1,38 @@
+{
+  "studenti": [
+    {
+      "id": "1",
+      "nome": "Paolo",
+      "cognome": "Rossi",
+      "avatar": "https://mockmind-api.uifaces.co/content/human/222.jpg"
+    },
+    {
+      "id": "2",
+      "nome": "Anna",
+      "cognome": "Verdi",
+      "avatar": "https://mockmind-api.uifaces.co/content/human/220.jpg"
+    }
+
+  ],
+  "docenti": [
+    {
+      "id": "1",
+      "nome": "Luca",
+      "cognome": "Bianchi",
+      "corso": "HTML"
+    },
+    {
+      "id": "2",
+      "nome": "Maria",
+      "cognome": "Gialli",
+      "corso": "Java"
+    }
+  ],
+  "viaggi": [
+    {
+      "destinazione": "Londro",
+      "prezzo": 200,
+      "partenza": "oggi"
+    }
+  ]
+}
