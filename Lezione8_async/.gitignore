@@ -1,0 +1,2 @@
+#Il file gitignore mi permette di esclure file e cartella dal carimento su git
+/node_modules

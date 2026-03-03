@@ -25,6 +25,11 @@ fetch(URLendpoint)
     console.log(utenti);
     creaListaUsers(utenti);
 })
+.finally(() =>{
+    console.log("Questo viene sempre eseguito ma per ultimo");
+    
+}
+)
 
 
 const demo = document.querySelector("#demo");

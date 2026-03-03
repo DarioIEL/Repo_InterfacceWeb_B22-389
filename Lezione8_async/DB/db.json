@@ -12,7 +12,6 @@
       "cognome": "Verdi",
       "avatar": "https://mockmind-api.uifaces.co/content/human/220.jpg"
     }
-
   ],
   "docenti": [
     {
@@ -30,9 +29,11 @@
   ],
   "viaggi": [
     {
-      "destinazione": "Londro",
+      "destinazione": "Londra",
       "prezzo": 200,
-      "partenza": "oggi"
+      "partenza": "oggi",
+      "id": "119f"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
