@@ -45,7 +45,7 @@
 <body>
     <h2>Gestione Nome Utente</h2>
 
-    abel for="nome">Inserisci il tuo nome:</label>
+    <label for="nome">Inserisci il tuo nome:</label>
     <input type="text" id="nome" placeholder="Mario Rossi">
     <button id="salva">Salva</button>
     <button id="carica">Carica</button>
