@@ -1,0 +1,25 @@
+{
+    "viaggi": [
+    {
+      "destinazione": "Londra",
+      "prezzo": 200,
+      "partenza": "oggi",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGLEhB4gC0jT-zc2JkJvqddWgcnS46HJ6fQ&s",
+      "id": 1
+    },
+    {
+      "destinazione": "Tokio",
+      "prezzo": 1200,
+      "partenza": "15/04/2026",
+      "image": "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt1944825dcd88a09c/675e1a47bbb2f64b2839cf97/japan-725347-Header_Mobile.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+      "id": 2
+    },
+    {
+      "destinazione": "New York",
+      "prezzo": 1000,
+      "partenza": "27/06/2026",
+      "image": "https://image.newyorkcity.it/wp-content/uploads/2020/03/New-York-Helicopter-Tour-2.eric_both.bottom_right.jpg.webp",
+      "id": 3
+    }
+  ]
+}

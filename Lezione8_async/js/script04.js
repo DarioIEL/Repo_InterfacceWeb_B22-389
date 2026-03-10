@@ -93,5 +93,3 @@ btnAll.addEventListener("click", function(){
     });
 
 });
-
-
