@@ -1,18 +1,28 @@
+import Viaggio from "./Viaggio.js";
+
 const elListaViaggi = document.querySelector("#elListaViaggi");
 
 async function fetchViaggi(){
     const response = await fetch("http://localhost:3000/viaggi"); //aspetta la risposta
-    const viaggi = await response.json(); //aspetta il parsing JSON
     
-    let mieiViaggi = viaggi;
+    if(!response.ok){
+        throw new Error("Errore nel caricamento dati");
+    }
+
+    const dati = await response.json(); //aspetta il parsing JSON
+    const viaggi = dati.map(v => new Viaggio(v));
 
     // elListaViaggi.appendChild(creaCard(mieiViaggi[0]));
-    mieiViaggi.forEach(viaggio => {
+    viaggi.forEach(viaggio => {
         elListaViaggi.appendChild(creaCard(viaggio));
     });
 }
 
-
+/**
+ * 
+ * @param {Viaggio} viaggio 
+ * @returns 
+ */
 function creaCard(viaggio){
     const col4 = document.createElement("div");
     col4.setAttribute("class", "col-4");
@@ -46,6 +56,10 @@ function creaCard(viaggio){
     return col4;
 }
 
+/**
+ * 
+ * @param {Viaggio} viaggio 
+ */
 function compraViaggio(viaggio){
     console.log("...Stai acquistato il seguente viaggio ", viaggio);
     //OPZ 1. Posso salvare il viaggio nella localStorage

@@ -24,5 +24,11 @@
             "cognome": "Verdi",
             "avatar": "https://mockmind-api.uifaces.co/content/human/80.jpg"
         }
+    ],
+
+    "studentiIscritti": [
+        
     ]
+
+
 }
